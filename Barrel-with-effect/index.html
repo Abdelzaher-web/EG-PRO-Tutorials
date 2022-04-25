@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Barrel with effect</title>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div class="box" style="--color:#0f0;--back:url(../images/html.svg);" data-rang="60%" data-name="HTML">
+            <div class="level">
+                <div class="progress"></div>
+            </div>
+            <div class="text">
+                HTML <br> 60 %
+            </div>
+        </div>
+        <div class="box" style="--color:#1f48ff;--back:url(../images/css.svg);" data-rang="80%" data-name="Css">
+            <div class="level">
+                <div class="progress"></div>
+            </div>
+            <div class="text">
+                Css <br> 80 %
+            </div>
+        </div>
+        <div class="box" style="--color:#fffb1f;--back:url(../images/javascript.svg);" data-rang="40%" data-name="Javascript">
+            <div class="level">
+                <div class="progress"></div>
+            </div>
+            <div class="text">
+                Javascript <br> 40 %
+            </div>
+        </div>
+
+        <script>
+            let boxs = document.querySelectorAll(".box");
+            boxs.forEach(box => {
+                let level = box.querySelector(".level");
+                let progress = level.querySelector(".progress");
+                let text = box.querySelector(".text");
+                let x = 0; 
+                setInterval(() => {
+                    if (x === parseInt(box.dataset.rang) + 1) {
+                        return
+                    }
+                    progress.style.height = `${x}%`;
+                    text.innerHTML = `${box.dataset.name} <br> ${x} %`;
+                    x++;
+                }, 100);
+            })
+        </script>
+    </body>
+</html>

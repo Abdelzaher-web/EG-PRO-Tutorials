@@ -1,0 +1,119 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #111;
+}
+.box{
+    position: relative;
+    width: 200px;
+    height: 260px;
+    background-color: #222;
+    border-radius: 30%;
+    box-shadow: 
+    inset 10px 0px #333,
+    inset -10px 0px #333,
+    inset 0px -5px #333;
+    margin: 0px 5px;
+}
+.box::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    width: calc(200px /2);
+    height: 20px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    box-shadow: 0px 5px 15px -3px rgba(51, 51, 51, 0.5);
+}
+.box::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 60%;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000;
+    transform: translate(-50%,105%);
+    filter: blur(10px);
+    z-index: -1;
+}
+.box .level{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    overflow-y: hidden;
+}
+.box .level .progress{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 0%;
+    border-radius: 0px 0px 30% 30%;
+    transition: all ease .5s;
+    background-color: var(--color);
+}
+.box .level .progress::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 15px;
+    transform: translateY(-90%);
+    background-image: var(--back);
+    background-size: 180% 100%;
+    background-repeat: repeat-x;
+    background-position: 0% 100%;
+    animation: animate 2s linear infinite;
+
+}
+@keyframes animate {
+    100%{
+        background-position: calc(180% * 2.5) 100%;
+    }
+}
+.box .level .progress::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    background-color: var(--color);
+    filter: blur(30px);
+}
+.box .text{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-size: 20pt;
+    /* Now I will add my font but you can add any font*/
+    font-family: "28 Days Later";
+    text-shadow: 0px 3px 3px #000;
+}
