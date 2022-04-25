@@ -5,3 +5,7 @@
 
 ## Youtube playlist :
 ### https://www.youtube.com/playlist?list=PLP0ceyhSCyu7SZ_zu5bOc2Y757lNlFJAz
+
+## Tiktok chanel :
+### https://www.tiktok.com/@eg__pro
+
