@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Eid Al-Fitr</title>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div class="box">
+            <div class="">
+                Eid Al-Fitr <br> 2022
+            </div>
+            <div class="">
+                Eid Al-Fitr <br> 2022
+            </div>
+        </div>
+
+        <script>
+            setTimeout(() => {
+                let boxs = document.querySelectorAll(".box div");
+                boxs.forEach(box =>{
+                    box.classList.add("active")
+                })
+            }, 1000);
+        </script>
+    </body>
+</html>
