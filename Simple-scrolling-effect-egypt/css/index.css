@@ -1,0 +1,110 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html::-webkit-scrollbar{
+    /* This is only for make space in the view but it isn't important  */
+    width: 0px;
+}
+body{
+    height: 150vh;
+}
+.box{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-172.7deg,#c9eff9,#f8f6ff);
+    background-size: 100%;
+    overflow: hidden;
+}
+.box >*{
+    transition: all linear .1s;
+}
+.box::before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: url(../images/clouds.png);
+    background-position-x: var(--x);
+    background-position-Y: 5%;
+    background-size: 50%;
+    background-repeat: repeat-x;
+    overflow: hidden;
+    z-index: -1;
+    transition: all linear .1s;
+}
+.box::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(360deg,#481833,transparent,transparent,transparent);
+    z-index: 4;
+}
+.box .pyramids{
+    position: absolute;
+    left: 0%;
+    top: 15%;
+    width: 101%;
+    height: 40%;
+    z-index: 1;
+}
+@font-face {
+    font-family: myFont;
+    src: url(../fonts/LmsEgyptianBookends-lKw0.ttf);
+}
+.box .egypt{
+    position: absolute;
+    left: 0%;
+    top: 55%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    font-family: myFont;
+    font-weight: normal;
+    font-size: 3cm;
+    color: #ff0;
+    text-shadow: 0px 0px 10px #000;
+    letter-spacing: 10px;
+}
+.box .house{
+    position: absolute;
+    left: -2px;
+    bottom: -2px;
+    width: 101%;
+    height: 50%;
+    z-index: 3;
+}
+.box .more{
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    z-index: 5;
+    padding:10px 15px;
+    transform: translateX(-50%);
+    font-size: 18pt;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #ffab00;
+    color: #fff;
+    box-shadow: 0px 2px 40px -3px #ffab00;
+    transition: all ease .5s;
+    cursor: pointer;
+}
+.box .more:hover{
+    box-shadow: 
+    0px 2px 30px -3px #ffab00,
+    inset 3px 3px 10px #ffbe3d,
+    inset -3px -3px 10px #d89000;
+}
