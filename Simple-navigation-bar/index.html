@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple navigation bar</title>
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+    <body>
+        <div class="navigation-bar">
+            <div class="current" style="--num:0;"><span></span></div>
+            <li class="active">
+               <span><a><i class="fa fa-home"></i></a></span>
+               <div class="text">home</div>
+            </li>
+            <li>
+               <span><a><i class="fa fa-user-friends"></i></a></span>
+               <div class="text">friends</div>
+            </li>
+            <li>
+               <span><a><i class="fa fa-newspaper"></i></a></span>
+               <div class="text">news</div>
+            </li>
+            <li>
+               <span><a><i class="fa fa-bell"></i></a></span>
+               <div class="text">alerts</div>
+            </li>
+        </div>
+
+        <script>
+            let current = document.querySelector(".navigation-bar .current");
+            let list = document.querySelectorAll(".navigation-bar li");
+
+            list.forEach((li,index) => {
+                li.addEventListener("click",()=>{
+                    list.forEach(li2 => {
+                        li2.classList.remove("active");
+                    })
+                    li.classList.add("active");
+                    current.style.setProperty("--num",index);
+                })
+            })
+        </script>
+    </body>
+</html>
