@@ -1,0 +1,107 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    width:100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+.list{
+    background-color: #333;
+    padding: 50px;
+    box-shadow: 
+    inset 8px 8px 10px -3px #444,
+    inset -8px -8px 10px -3px #222,
+    0px 0px 10px #222,
+    0px 0px 20px #222,
+    0px 0px 30px #222,
+    0px 0px 40px #222;
+    border-radius: 10px;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.list .title{
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.list li{
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.list li::before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff7300;
+    box-shadow: 
+    inset 4px 4px 4px -1px rgba(225, 225, 225, .3),
+    inset -4px -4px 4px -1px rgba(0, 0, 0, .3),
+    5px 5px 10px #222,
+    5px 5px 20px #222,
+    5px 5px 30px #222;
+    border-radius: 50px;
+    transition: .5s;
+}
+.list li .number{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16pt;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 50px;
+    z-index: 1;
+}
+.list li .number::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    opacity: 0;
+    transition: .5s;
+}
+.list li .text{
+    padding: 5px 20px;
+    height: 100%;
+    position: relative;
+}
+.list li .text>*{
+    transition: .5s;
+}
+.list li .text .name{
+    font-size: 16pt;
+    font-weight: bold;
+    color: #fff;
+}
+.list li .text .jop{
+    color: #888;
+}
+.list li:hover::before{
+    width: calc(100% + 10px);
+}
+.list li:hover .number::before{
+    opacity: 1;
+    transform: scale(1);
+}
+.list li:hover .text>*{
+    color: #fff !important;
+}
