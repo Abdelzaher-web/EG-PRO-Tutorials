@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Custom navigation menu</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <ul class="navigation-menu">
+            <div class="current" style="--active:0;"></div>
+
+            <li data-number="0">
+                <a>
+                    <div class="icon-square">
+                        <i class="icon fa fa-home"></i>
+                    </div>
+                    <div class="title">home</div>
+                </a>
+            </li>
+            
+            <li data-number="1">
+                <a>
+                    <div class="icon-square">
+                        <i class="icon fa fa-user"></i>
+                    </div>
+                    <div class="title">profile</div>
+                </a>
+            </li>
+
+            <li data-number="2">
+                <a>
+                    <div class="icon-square">
+                        <i class="icon fab fa-facebook-messenger"></i>
+                    </div>
+                    <div class="title">messages</div>
+                </a>
+            </li>
+
+            <li data-number="3">
+                <a>
+                    <div class="icon-square">
+                        <i class="icon fa fa-cog"></i>
+                    </div>
+                    <div class="title">settings</div>
+                </a>
+            </li>
+
+            <li data-number="4">
+                <a>
+                    <div class="icon-square">
+                        <i class="icon fa fa-sign-out-alt"></i>
+                    </div>
+                    <div class="title">sign out</div>
+                </a>
+            </li>
+
+        </ul>
+
+        <script>
+            let current = document.querySelector(".navigation-menu .current");
+            let list = document.querySelectorAll(".navigation-menu li");
+
+            list.forEach(li => {
+                li.addEventListener("click",()=>{
+                    current.style.setProperty("--active",li.dataset.number)
+                })
+            })
+        </script>
+    </body>
+</html>
