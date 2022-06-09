@@ -1,0 +1,101 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #eee;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: calc(300px * 1.5);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px -3px #000;
+    overflow: hidden;
+    background-color: #222;
+}
+.card::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height: 35%;
+    background-color: #0051ff;
+    z-index: 1;
+}
+.card .photo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px -3px #000;
+    z-index: 2;
+    /* opacity: 0%; */
+}
+.card:hover .photo{
+    transform: translateY(-15%) scale(.6,.6);
+}
+.card .info{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
+    transform: translateY(100%);
+    opacity: 0%;
+    transition: .5s;
+}
+.card .info .title{
+    margin-bottom: 15px;
+    text-align: center;
+}
+.card .info .title .name{
+    font-size: 16pt;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.card .info .title .jop{
+    color: #aaa;
+    text-transform: capitalize;
+}
+.card .info .accounts{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 16pt;
+}
+.card .info .accounts .icon{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0px 10px;
+    cursor: pointer;
+    transition: .5s;
+    background-color: #0051ff;
+}
+.card .info .accounts .icon:hover{
+    background-color: transparent;
+}
+.card:hover .info{
+    opacity: 100%;
+    bottom: 10%;
+    transform: translateY(0%);
+}
