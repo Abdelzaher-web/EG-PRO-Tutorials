@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Professional download button</title>
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+    <body>
+        <button class="download-btn">
+            <div class="download-text">
+                <i class="icon fa fa-download"></i>
+                download
+            </div>
+            <div class="progress-box" data-number="0%" style="--number:0%;">
+            </div>
+            <div class="complete-text">
+                <i class="icon fa fa-check-circle"></i>
+                complete
+            </div>
+
+        </button>
+        <script>
+            let downloadBtn = document.querySelector(".download-btn");
+            let downloadText = downloadBtn .querySelector(".download-text");
+            let progress = downloadBtn.querySelector(".progress-box");
+            let completeText = downloadBtn .querySelector(".complete-text");
+
+            downloadBtn.addEventListener('click',()=>{
+                downloadBtn.classList.add("download");
+                let x = 0;
+                let download = setInterval(() => {
+                    progress.style.setProperty("--number",`${x}%`);
+                    progress.dataset.number = `${x}%`;
+                    if ( x === 100) {
+                        downloadBtn.classList.remove("download");
+                        downloadBtn.classList.add("complete");
+                        clearInterval(download);
+                        return
+                    }
+                    x++;
+                }, 100);
+            })
+
+        </script>
+    </body>
+</html>

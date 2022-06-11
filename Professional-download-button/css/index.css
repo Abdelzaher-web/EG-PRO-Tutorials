@@ -1,0 +1,126 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #222;
+    width:100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.download-btn{
+    position: relative;
+    color: #ccc;
+    background-color: #444;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px -5px #000;
+    overflow: hidden;
+    font-size: 16pt;
+    cursor: pointer;
+    transition: .5s;
+}
+.download-btn .download-text{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.download-btn .progress-box{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 100%;
+    height:100%;
+    background-color: #333;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.download-btn .progress-box::before{
+    content: "";
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: var(--number);
+    height:100%;
+    background-color: #ff6600;
+    transition: .5s;
+}
+.download-btn .progress-box::after{
+    content: attr(data-number);
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 100%;
+    height:100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.download-btn .complete-text{
+    position: absolute;
+    left: 0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: .5s;
+
+}
+.download-btn .icon{
+    margin: 5px;
+}
+
+/* Download action */
+.download-btn.download{
+    padding: 2.5px;
+    width: 250px;
+    font-size: 10pt;
+    color: #fff;
+}
+.download-btn.download .download-text{
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+}
+.download-btn.download .progress-box{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Complete action */
+.download-btn.complete{
+    padding: 10px;
+    width: auto;
+    font-size: 16pt;
+    color: #ccc;
+}
+.download-btn.complete .progress-box{
+    opacity: 0;
+    visibility: hidden;
+}
+.download-btn.complete .download-text{
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+}
+.download-btn.complete .complete-text{
+    visibility: visible;
+    transform: translateY(0%);
+    opacity: 1;
+}
